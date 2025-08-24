@@ -31,6 +31,49 @@ racket1 = None
 racket2 = None
 ball = None
 
+#game sprite
+
+class GameSprite(sprite.Sprite):
+    def __init__(self,surf,x,y,speed =0 ):
+        super(). __init__()
+        self.image = surf
+        self.rect = self.image.get_rect(topleft=(x, y))
+        self.speed = speed
+        
+    def reset():
+        window.blit(self.image,self.rect.topleft)
+        
+class Player(GameSprite):
+    def clamp():
+        if self.rect.top < 0:
+            self.rect.top = 0
+        if self.rect.bottom > win_height:
+            self.rect.bottom = win_height
+            
+    def update(self):
+        keys = key.get_pressed()
+        if keys[K_w]:
+            self.rect.y -= self.speed
+        if keys[K_s]:
+            self.rect.y += self.speed
+        self.clamp()
+    
+    def update_r(self):
+        keys = key.get_pressed()
+        if keys[K_UP]:
+            self.rect.y -= self.speed
+        if keys[K_DOWN]:
+            self.rect.y += self.speed
+        self.clamp()
+        
+#OBJECT
+
+paddle_surf = Surface((PAD_W,PAD_H))
+paddle_surf.fill(GREY1)
+
+racket1 = Player(paddle_surf.copy(),PAD_GAP,(win_height - PAD_H)//2, BASE_SPEED_PADDLE)
+racket2 = Player(paddle_surf.copy(), win_width - PAD_GAP - PAD_W, (win_height - PAD_H)//2, BASE_SPEED_PADDLE)
+
 #UI
 font.init()
 score_font = font.Font(None, 56)
@@ -58,6 +101,9 @@ def UI():
     if winner is not None:
         win_text = hint_font.render(f"Player {winner} has won,press 'R' to reset.",True,GREY2)
         window.blit(win_text,(win_width//2 -score_text.get_width()//2,60))
+        
+
+
 
 #game loop
 
@@ -81,13 +127,19 @@ while game:
                 racket1.rect.centery = win_height // 2
                 racket2.rect.centery = win_height // 2
                 ball.center_serve(direction=1)
-                
+        
+    racket1.update()     
+    racket2.update_r() 
+     
                 
        
-        draw_court()
-        UI()
-        display.update()
-        clock.tick(FPS)
+    draw_court()
+    UI()
+    racket1.reset()
+    racket2.reset()
+    
+    display.update()
+    clock.tick(FPS)
       
     
 
