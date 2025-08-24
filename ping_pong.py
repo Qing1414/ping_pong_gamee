@@ -44,7 +44,7 @@ class GameSprite(sprite.Sprite):
         window.blit(self.image,self.rect.topleft)
         
 class Player(GameSprite):
-    def clamp():
+    def clamp(self):
         if self.rect.top < 0:
             self.rect.top = 0
         if self.rect.bottom > win_height:
