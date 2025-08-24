@@ -40,7 +40,7 @@ class GameSprite(sprite.Sprite):
         self.rect = self.image.get_rect(topleft=(x, y))
         self.speed = speed
         
-    def reset():
+    def reset(self):
         window.blit(self.image,self.rect.topleft)
         
 class Player(GameSprite):
