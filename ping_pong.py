@@ -35,7 +35,7 @@ ball = None
 
 class GameSprite(sprite.Sprite):
     def __init__(self,surf,x,y,speed =0 ):
-        super(). __init__()
+        super().__init__()
         self.image = surf
         self.rect = self.image.get_rect(topleft=(x, y))
         self.speed = speed
