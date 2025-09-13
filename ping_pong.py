@@ -20,8 +20,8 @@ PAD_W, PAD_H = 14, 120   # thinner paddles
 BALL_R = 10              # round ball radius
 PAD_GAP = 30             # gap from side wall
 BASE_SPEED_PADDLE = 6
-BALL_SPEED_X = 4
-BALL_SPEED_Y = 3
+BALL_SPEED_X = 6
+BALL_SPEED_Y = 5
 
 WIN_SCORE = 6
 winner = None
