@@ -3,7 +3,7 @@ ping pong two player game
 
 controls: 
 player1 = W and A keys
-player2 = UP and DOWN arrow keys
+,player2 = UP and DOWN arrow keys
 
 goal to win: 
 6
