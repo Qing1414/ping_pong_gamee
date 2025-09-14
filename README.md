@@ -1,13 +1,23 @@
-# ping_pong_gamee
+# Ping_pong_gamee
 ping pong two player game
 
-controls: 
-player1 = W and A keys
-, player2 = UP and DOWN arrow keys
+## Controls
+This two player game is controls by two paddles represented by two rectangles.
 
-goal to win: 
+- Player1 = W and A keys
+- Player2 = UP and DOWN arrow keys
+
+# Goal to win
 6
 
-extra features:
-P = pause
-, R = reset(press P key first)
+## Extra features
+- P = pause
+- R = reset(press P key first)
+
+## Ball
+The ball moves automatically; will bounce when it hits the top and bottom walls.
+
+The opponent gains a point if the ball hits the left/right wall
+
+
+
