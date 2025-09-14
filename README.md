@@ -14,6 +14,10 @@ This two player game is controls by two paddles represented by two rectangles.
 - P = pause
 - R = reset(press P key first)
 
+## Made with
+
+python
+
 ## Ball
 The ball moves automatically; will bounce when it hits the top and bottom walls.
 
