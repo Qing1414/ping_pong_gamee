@@ -7,7 +7,7 @@ This two player game is controls by two paddles represented by two rectangles.
 - Player1 = W and A keys
 - Player2 = UP and DOWN arrow keys
 
-# Goal to win
+## Goal to win
 6
 
 ## Extra features
